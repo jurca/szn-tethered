@@ -1,0 +1,36 @@
+{
+  "name": "szn-tethered",
+  "version": "0.0.0",
+  "description": "Helper element for visually attaching content to another element.",
+  "main": "szn-tethered.es6.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jurca/szn-tethered.git"
+  },
+  "keywords": [
+    "custom",
+    "element",
+    "szn",
+    "seznam",
+    "seznam.cz",
+    "tether",
+    "tethered"
+  ],
+  "author": "Martin Jurča <martin.jurca@firma.seznam.cz>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jurca/szn-tethered/issues"
+  },
+  "homepage": "https://github.com/jurca/szn-tethered#readme",
+  "dependencies": {
+    "@jurca/szn-elements": "0.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.11.0",
+    "eslint-config-fbjs-opensource": "^1.0.0",
+    "jest": "^21.2.1"
+  }
+}
