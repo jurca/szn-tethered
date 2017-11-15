@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/jurca/szn-tethered#readme",
   "dependencies": {
-    "@jurca/szn-elements": "0.0.0"
+    "@jurca/szn-elements": "0.0.1"
   },
   "devDependencies": {
     "eslint": "^4.11.0",
