@@ -167,7 +167,7 @@
       } else {
         this.horizontalAlignment = HORIZONTAL_ALIGN.LEFT
       }
-      if (viewportHeight - tetherBounds.screenY + tetherBounds.height + contentSize.height < this.minBottomSpace) {
+      if (viewportHeight - (tetherBounds.screenY + tetherBounds.height) < this.minBottomSpace) {
         this.verticalAlignment = VERTICAL_ALIGN.TOP
       } else {
         this.verticalAlignment = VERTICAL_ALIGN.BOTTOM
