@@ -190,10 +190,10 @@
     const y = tetherBounds.y + (instance.verticalAlignment === VERTICAL_ALIGN.TOP ? -1 : tetherBounds.height + 1)
 
     if (transformsSupported) {
-      this._root.style.transform = `translate(${x}px, ${y}px)`
+      instance._root.style.transform = `translate(${x}px, ${y}px)`
     } else {
-      this._root.style.left = `${x}px`
-      this._root.style.top = `${y}px`
+      instance._root.style.left = `${x}px`
+      instance._root.style.top = `${y}px`
     }
   }
 
