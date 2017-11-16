@@ -16,9 +16,14 @@ Example markup (usually constructed by JavaScript):
     This is the element to which the content should be tethered.
 </div>
 <szn-tethered id="tethered">
-  <div class="tethered-content">
+  <div class="tethered-content" data-szn-tethered-content>
     Any content
   </div>
+  <!--
+  The szn-tethered element must have exactly one child element, which will
+  hold the tethered content. The child element must have the
+  data-szn-tethered-content attribute set.
+  -->
 </szn-tethered>
 ```
 
@@ -26,22 +31,12 @@ Accompanying CSS:
 
 ```css
 .tethered-content {
-    position: absolute;
-    left: 0;
-    top: 0;
-
+    /*
+       It is recommended to set the dimensions as this element is positioned
+       absolutely, but this is not necessary.
+    */
     width: 200px;
     height: 60px;
-}
-
-[data-horizontal-align='right'] .tethered-content {
-    left: auto;
-    right: 0;
-}
-
-[data-vertical-align='top'] .tethered-content {
-    top: auto;
-    bottom: 0;
 }
 ```
 

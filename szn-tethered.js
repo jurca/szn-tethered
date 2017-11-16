@@ -252,16 +252,24 @@
    * @return {ContentDimensions} The dimensions of the tethered content.
    */
   function getContentDimensions(instance) {
+    const contentElement = instance._root.firstElementChild
+    if (!contentElement) {
+      return {
+        width: 0,
+        height: 0,
+      }
+    }
+
     let width
     let height
     if (window.devicePixelRatio > 1) {
       // This is much less performant, so we use in only on HiDPi displays
-      const bounds = instance._root.getBoundingClientRect()
+      const bounds = contentElement.getBoundingClientRect()
       width = bounds.width
       height = bounds.height
     } else {
-      width = instance._root.scrollWidth
-      height = instance._root.scrollHeight
+      width = contentElement.scrollWidth
+      height = contentElement.scrollHeight
     }
 
     return {
