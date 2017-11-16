@@ -1,6 +1,6 @@
 {
   "name": "@jurca/szn-tethered",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Helper element for visually attaching content to another element.",
   "main": "szn-tethered.es6.js",
   "scripts": {
