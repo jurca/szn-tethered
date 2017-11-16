@@ -167,7 +167,7 @@
       } else {
         this.horizontalAlignment = HORIZONTAL_ALIGN.LEFT
       }
-      if (viewportHeight - tetherBounds.screenY + tetherBounds.height + 1 + contentSize.height < this.minBottomSpace) {
+      if (viewportHeight - tetherBounds.screenY + tetherBounds.height + contentSize.height < this.minBottomSpace) {
         this.verticalAlignment = VERTICAL_ALIGN.TOP
       } else {
         this.verticalAlignment = VERTICAL_ALIGN.BOTTOM
@@ -187,7 +187,7 @@
    */
   function updatePosition(instance, tetherBounds) {
     const x = tetherBounds.x + (instance.horizontalAlignment === HORIZONTAL_ALIGN.LEFT ? 0 : tetherBounds.width)
-    const y = tetherBounds.y + (instance.verticalAlignment === VERTICAL_ALIGN.TOP ? -1 : tetherBounds.height + 1)
+    const y = tetherBounds.y + (instance.verticalAlignment === VERTICAL_ALIGN.TOP ? 0 : tetherBounds.height)
 
     if (transformsSupported) {
       instance._root.style.transform = `translate(${x}px, ${y}px)`
