@@ -41,18 +41,24 @@
       rootElement.VERTICAL_ALIGN = VERTICAL_ALIGN
       rootElement.setTether = tether => this.setTether(tether)
       rootElement.updatePosition = () => this.updatePosition()
-      Object.defineProperty(rootElement, 'horizontalAlign', {
-        get: () => this.horizontalAlignment,
-      })
-      Object.defineProperty(rootElement, 'verticalAlignment', {
-        get: () => this.verticalAlignment,
-      })
-      Object.defineProperty(rootElement, 'minBottomSpace', {
-        get: () => this.minBottomSpace,
-        set: value => {
-          this.minBottomSpace = value
-        },
-      })
+      if (!rootElement.hasOwnProperty('horizontalAlign')) {
+        Object.defineProperty(rootElement, 'horizontalAlign', {
+          get: () => rootElement._broker.horizontalAlignment,
+        })
+      }
+      if (!rootElement.hasOwnProperty('verticalAlignment')) {
+        Object.defineProperty(rootElement, 'verticalAlignment', {
+          get: () => rootElement._broker.verticalAlignment,
+        })
+      }
+      if (!rootElement.hasOwnProperty('minBottomSpace')) {
+        Object.defineProperty(rootElement, 'minBottomSpace', {
+          get: () => rootElement._broker.minBottomSpace,
+          set: value => {
+            rootElement._broker.minBottomSpace = value
+          },
+        })
+      }
 
       /**
        * The currently used horizontal alignment of the content to the tethering element.
