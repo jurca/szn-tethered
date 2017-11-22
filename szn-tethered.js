@@ -18,7 +18,7 @@
     TOP: 'VERTICAL_ALIGN.TOP',
     BOTTOM: 'VERTICAL_ALIGN.BOTTOM',
   }
-  const MIN_BOTTOM_SPACE = 120 // px
+  const MIN_BOTTOM_SPACE = 160 // px
   const OBSERVED_DOM_EVENTS = ['resize', 'scroll', 'wheel', 'touchmove']
   if (Object.freeze) {
     Object.freeze(HORIZONTAL_ALIGN)
