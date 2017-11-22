@@ -162,7 +162,7 @@
 
       const tetherBounds = getTetherBounds(this._tether)
       const contentSize = getContentDimensions(this)
-      const viewportWidth = window.innerWidth
+      const viewportWidth = document.documentElement.clientWidth // window.innerWidth - scrollbars
       const viewportHeight = window.innerHeight
 
       if (
