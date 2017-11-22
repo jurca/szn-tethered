@@ -59,6 +59,8 @@
           },
         })
       }
+      rootElement.onVerticalAlignmentChange = null
+      rootElement.onHorizontalAlignmentChange = null
 
       /**
        * The currently used horizontal alignment of the content to the tethering element.
@@ -165,6 +167,8 @@
       const viewportWidth = document.documentElement.clientWidth // window.innerWidth - scrollbars
       const viewportHeight = window.innerHeight
 
+      const lastHorizontalAlignment = this.horizontalAlignment
+      const lastVerticalAlignment = this.verticalAlignment
       if (
         tetherBounds.screenX + contentSize.width > viewportWidth &&
         tetherBounds.screenX + tetherBounds.width - contentSize.width >= 0
@@ -181,6 +185,13 @@
 
       updateAttributes(this)
       updatePosition(this, tetherBounds)
+
+      if (this.horizontalAlignment !== lastHorizontalAlignment && this._root.onHorizontalAlignmentChange) {
+        this._root.onHorizontalAlignmentChange(this.horizontalAlignment)
+      }
+      if (this.verticalAlignment !== lastVerticalAlignment && this._root.onVerticalAlignmentChange) {
+        this._root.onVerticalAlignmentChange(this.verticalAlignment)
+      }
     }
   }
 
