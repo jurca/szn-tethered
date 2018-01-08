@@ -24,18 +24,11 @@ function compile() {
 const copy = gulp.parallel(
   copyES6Implementation,
   copyPackageMetaFiles,
-  copyCSS,
 )
 
 function copyPackageMetaFiles() {
   return gulp
     .src(['./LICENSE', './package.json', './README.md'])
-    .pipe(gulp.dest('./dist'))
-}
-
-function copyCSS() {
-  return gulp
-    .src('./szn-tethered.css')
     .pipe(gulp.dest('./dist'))
 }
 

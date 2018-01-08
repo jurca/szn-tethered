@@ -10,6 +10,39 @@
    * @typedef {{screenX: number, screenY: number, x: number, y: number, width: number, height: number}} TetherBounds
    */
 
+  const CSS_STYLES = `
+    szn-tethered {
+      display: block;
+  
+      position: absolute;
+      left: 0;
+      top: 0;
+  
+      width: 0;
+      height: 0;
+  
+      transform: translate(0, 0);
+    }
+    
+    szn-tethered > [data-szn-tethered-content] {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    
+    
+    szn-tethered[data-horizontal-align='right'] > [data-szn-tethered-content] {
+        left: auto;
+        right: 0;
+    }
+    
+    szn-tethered[data-vertical-align='top'] > [data-szn-tethered-content] {
+        top: auto;
+        bottom: 0;
+    }
+  `
+  const CSS_STYLES_TAG = 'data-styles--szn-tethered'
+
   const HORIZONTAL_ALIGN = {
     LEFT: 'HORIZONTAL_ALIGN.LEFT',
     RIGHT: 'HORIZONTAL_ALIGN.RIGHT',
@@ -26,6 +59,7 @@
   }
 
   let transformsSupported = null
+  let stylesInjected = false
 
   /**
    * The <code>szn-tethered</code> element is used to tether the on-screen position of content to another element
@@ -119,6 +153,14 @@
        * @type {string}
        */
       this._lastVerticalAlignment = null
+
+      if (!stylesInjected) {
+        const stylesContainer = document.createElement('style')
+        stylesContainer.innerHTML = CSS_STYLES
+        stylesContainer.setAttribute(CSS_STYLES_TAG, '')
+        document.head.appendChild(stylesContainer)
+        stylesInjected = true
+      }
 
       updateAttributes(this)
     }

@@ -10,8 +10,6 @@ element used by other `szn-*` elements.
 Example markup (usually constructed by JavaScript):
 
 ```html
-<link rel="stylesheet" href="szn-tethered.css">
-
 <div id="tether">
     This is the element to which the content should be tethered.
 </div>
