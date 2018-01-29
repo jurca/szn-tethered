@@ -186,6 +186,10 @@
      * @param {Element} tether The element to which this szn-tethered element should be tethered.
      */
     setTether(tether) {
+      if (tether === this._tether) {
+        return
+      }
+
       this._tether = tether
       this.updatePosition()
     }
