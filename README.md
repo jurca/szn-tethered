@@ -14,13 +14,13 @@ Example markup (usually constructed by JavaScript):
     This is the element to which the content should be tethered.
 </div>
 <szn-tethered id="tethered">
-  <div class="tethered-content" data-szn-tethered-content>
+  <div class="tethered-content" data-szn-tethered--content>
     Any content
   </div>
   <!--
   The szn-tethered element must have exactly one child element, which will
   hold the tethered content. The child element must have the
-  data-szn-tethered-content attribute set.
+  data-szn-tethered--content attribute set.
   -->
 </szn-tethered>
 ```
