@@ -28,8 +28,8 @@
     "url": "https://github.com/jurca/szn-tethered/issues"
   },
   "homepage": "https://github.com/jurca/szn-tethered#readme",
-  "dependencies": {
-    "@jurca/szn-elements": "0.0.6"
+  "peerDependencies": {
+    "@jurca/szn-elements": "^1.0.0"
   },
   "devDependencies": {
     "babel-preset-env": "^1.6.1",
