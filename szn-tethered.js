@@ -152,8 +152,6 @@
       this._lastVerticalAlignment = null
 
       SznElements.injectStyles(CSS_STYLES, 'szn-tethered')
-
-      updateAttributes(this)
     }
 
     onMount() {
