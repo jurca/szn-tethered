@@ -13,29 +13,28 @@
   const CSS_STYLES = `
     szn-tethered {
       display: block;
-  
+
       position: absolute;
       left: 0;
       top: 0;
-  
+
       width: 0;
       height: 0;
-  
+
       transform: translate(0, 0);
     }
-    
+
     szn-tethered > [data-szn-tethered--content] {
         position: absolute;
         left: 0;
         top: 0;
     }
-    
-    
+
     szn-tethered[data-horizontal-align='right'] > [data-szn-tethered--content] {
         left: auto;
         right: 0;
     }
-    
+
     szn-tethered[data-vertical-align='top'] > [data-szn-tethered--content] {
         top: auto;
         bottom: 0;
