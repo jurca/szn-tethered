@@ -41,7 +41,6 @@
         bottom: 0;
     }
   `
-  const CSS_STYLES_TAG = 'data-styles--szn-tethered'
 
   const HORIZONTAL_ALIGN = {
     LEFT: 'HORIZONTAL_ALIGN.LEFT',
@@ -59,7 +58,6 @@
   }
 
   let transformsSupported = null
-  let stylesInjected = false
 
   /**
    * The <code>szn-tethered</code> element is used to tether the on-screen position of content to another element
@@ -154,13 +152,7 @@
        */
       this._lastVerticalAlignment = null
 
-      if (!stylesInjected) {
-        const stylesContainer = document.createElement('style')
-        stylesContainer.innerHTML = CSS_STYLES
-        stylesContainer.setAttribute(CSS_STYLES_TAG, '')
-        document.head.appendChild(stylesContainer)
-        stylesInjected = true
-      }
+      SznElements.injectStyles(CSS_STYLES, 'szn-tethered')
 
       updateAttributes(this)
     }
