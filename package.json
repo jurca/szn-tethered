@@ -4,8 +4,8 @@
   "description": "Helper element for visually attaching content to another element.",
   "main": "szn-tethered.es6.js",
   "scripts": {
-    "test": "jest",
-    "build": "./node_modules/.bin/gulp",
+    "test": "eslint --max-warnings=0 *.js && jest",
+    "build": "gulp",
     "prepublishOnly": "echo Run \\'npm run publish-package\\' instead && exit 1",
     "publish-package": "git push && git push --tags && npm run build && npm publish --ignore-scripts dist"
   },
