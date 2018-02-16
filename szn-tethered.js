@@ -65,7 +65,7 @@
   SznElements['szn-tethered'] = class SznTethered {
     constructor(rootElement) {
       if (transformsSupported === null) {
-        transformsSupported = rootElement.style.hasOwnProperty('transform')
+        transformsSupported = 'transform' in rootElement.style
       }
 
       rootElement.HORIZONTAL_ALIGN = HORIZONTAL_ALIGN
