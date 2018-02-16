@@ -200,7 +200,11 @@
       const tetherBounds = getTetherBounds(this._tether)
       const contentSize = getContentDimensions(this)
       const viewportWidth = document.documentElement.clientWidth // window.innerWidth - scrollbars
-      const viewportHeight = window.innerHeight
+      // Lets hope the document element (<html>) is at least 100vh high - which it usually is.
+      const viewportHeight = Math.min(
+        document.documentElement.clientHeight, // window.innerHeight - scrollbars
+        window.innerHeight,
+      )
 
       const lastHorizontalAlignment = this.horizontalAlignment
       const lastVerticalAlignment = this.verticalAlignment
