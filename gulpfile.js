@@ -35,6 +35,7 @@ function copyPackageMetaFiles() {
 function copyES6Implementation() {
   return gulp
     .src('./szn-tethered.js')
+    .pipe(babel()) // strips trailing commas in function calls (ES2017) so the source becomes ES2015-compatible
     .pipe(rename('szn-tethered.es6.js'))
     .pipe(gulp.dest('./dist'))
 }
