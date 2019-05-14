@@ -9,7 +9,7 @@ function compile() {
   return gulp
     .src('./szn-tethered.js')
     .pipe(babel({
-      presets: [['env', {
+      presets: [['@babel/preset-env', {
         targets: {
           browsers: ['ie 8'],
         },
@@ -44,7 +44,7 @@ function minify() {
   return gulp
     .src('./dist/*.js')
     .pipe(babel({
-      presets: ['minify'],
+      presets: [['minify', {builtIns: false}]],
     }))
     .pipe(rename({
       suffix: '.min',

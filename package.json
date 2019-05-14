@@ -32,14 +32,16 @@
     "@seznam/szn-elements": "^1.2.3"
   },
   "devDependencies": {
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-minify": "^0.2.0",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "babel-preset-minify": "^0.5.0",
     "del": "^3.0.0",
     "eslint": "^5.16.0",
     "eslint-config-fbjs-opensource": "^1.0.0",
     "gulp": "^4.0.2",
-    "gulp-babel": "^7.0.0",
+    "gulp-babel": "^8.0.0",
     "gulp-rename": "^1.2.2",
     "jest": "^24.8.0"
-  }
+  },
+  "dependencies": {}
 }
