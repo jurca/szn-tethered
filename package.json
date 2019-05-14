@@ -1,5 +1,5 @@
 {
-  "name": "@jurca/szn-tethered",
+  "name": "@seznam/szn-tethered",
   "version": "1.0.0",
   "description": "Helper element for visually attaching content to another element.",
   "main": "szn-tethered.es6.js",
