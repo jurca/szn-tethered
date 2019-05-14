@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/seznam/szn-tethered#readme",
   "peerDependencies": {
-    "@jurca/szn-elements": "^1.0.1"
+    "@seznam/szn-elements": "^1.2.3"
   },
   "devDependencies": {
     "babel-preset-env": "^1.6.1",
